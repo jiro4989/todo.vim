@@ -7,6 +7,7 @@ function! todo#toggle(line)
   else
     let l:now = strftime('%Y/%m/%d %H:%M:%S')
     call setline('.', substitute(a:line, '\[\s*\]\s*', '\[x\]<' . l:now . '> ', ''))
+    unlet l:now
   endif
 endfunction
 
