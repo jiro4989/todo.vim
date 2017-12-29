@@ -1,0 +1,15 @@
+*todo.txt* Vim plugin for write todo note.
+
+You can switch todo mark if you pushed optional toggle key.
+
+ex1) `- [ ] task1`
+ex2) `- [x]<2017/07/01 11:22:33> task1`
+
+Mappings:
+X
+    toggle swich key, checked or unchecked.
+
+
+Commands:
+:ToggleTodo
+    toggle swich, checked or unchecked.
