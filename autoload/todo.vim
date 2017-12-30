@@ -14,7 +14,12 @@ endfunction
 
 " todoメモファイルをDocuments配下に作成して開く
 function! todo#create_new_todonote()
-  let l:todo_dir = $HOME . "/Documents/todo/"
+  let l:documents_dir = $HOME . "/Documents/"
+  if !isdirectory(l:documents_dir)
+    call mkdir(l:documents_dir)
+  endif
+
+  let l:todo_dir = l:documents_dir . "todo/"
   if !isdirectory(l:todo_dir)
     call mkdir(l:todo_dir)
   endif
