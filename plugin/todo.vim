@@ -16,5 +16,10 @@ if !exists(":ToggleDone")
   nnoremap X :ToggleDone<CR>
 endif
 
+if !exists(":CreateTodoFile")
+  command! -nargs=0 CreateTodoFile call todo#create_new_todonote()
+  nnoremap <Leader>tc :CreateTodoFile<CR>
+endif
+
 let &cpo = s:save_cpo
 unlet s:save_cpo

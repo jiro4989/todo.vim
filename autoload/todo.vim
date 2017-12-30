@@ -26,6 +26,9 @@ function! todo#create_new_todonote()
     exec ':e ' . escape(l:todo_file, ' ')
     call setline(1, '- [ ] ')
   endif
+
+  unlet l:todo_dir
+  unlet l:todo_file
 endfunction
 
 let &cpo = s:save_cpo
