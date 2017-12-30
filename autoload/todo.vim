@@ -6,7 +6,7 @@ function! todo#toggle(line)
   if a:line =~ '^\s*-\s*\[x\]'
     call setline('.', substitute(a:line, '\[x\]\s*<[^>]\+>', '\[ \]', ''))
   else
-    let l:now = strftime('%Y/%m/%d %H:%M:%S')
+    let l:now = strftime('%H:%M:%S')
     call setline('.', substitute(a:line, '\[\s*\]\s*', '\[x\] <' . l:now . '> ', ''))
     unlet l:now
   endif
