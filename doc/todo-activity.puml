@@ -1,0 +1,45 @@
+@startuml img/activity.png
+
+title ユーザの本プラグイン利用フロー
+
+:Vimの起動;
+
+partition 対象ファイルを開く {
+  :todo.txtを開くコマンドを入力;
+
+  if (対象ファイルが存在する) then (true)
+    :既存のファイルを編集する;
+  else (false)
+    :新しく対象ファイルをVimScriptから作成する;
+  endif
+}
+
+partition 思考-課題整理 {
+  :自身の課題を考える;
+
+  while (未起票の大課題が存在する)
+    :大課題を追加する;
+    while (未起票の中課題が存在する)
+      :中課題を追加する;
+      while (未起票の小課題が存在する)
+        :小課題を追加する;
+      endwhile
+    endwhile
+  endwhile
+}
+
+partition 課題実施 {
+  :課題を実施する;
+
+  :課題開始コマンドを入力する;
+
+  while (課題が完了していない)
+    :課題実施を継続する;
+  endwhile
+
+  :課題完了コマンドを入力する;
+}
+
+end
+
+@enduml
